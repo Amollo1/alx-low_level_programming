@@ -6,7 +6,7 @@
  * Return: 1 for upper letter, else 0
  */
 
-int _isupper(y)
+int _isupper(int y)
 {
 	if (y >= 65 && y <= 90)
 	{

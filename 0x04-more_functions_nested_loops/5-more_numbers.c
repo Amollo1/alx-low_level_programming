@@ -4,7 +4,7 @@
  * more_numbers - Print 10 times the number as from 0 to 14
  * Return: 10 times the number from 0 to 14
  */
-void mor_numbers(void)
+void more_numbers(void)
 {
 	int x, y;
 

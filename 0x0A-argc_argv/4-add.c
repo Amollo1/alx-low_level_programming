@@ -1,61 +1,44 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
-#include "main.h"
 
 /**
- * check_num - string there are digit
- * @str: array
+ * main - Prints the sum of args +ve numbers
+ * @argc: argument count
+ * @argv: argument vector
  * Return: Always 0
- */
-
-int check_num(char *str)
-{
-	unsigned int count;
-
-	count = 0;
-	while (count < strlen(str))
-	{
-		if (!isdigit(str[count]))
-		{
-			return (0);
-		}
-
-		count++;
-	}
-	return (1);
-}
-
-/**
- * main - print programe name
- * @argc: argument number
- * @argv: array
- * Rturn: Always 0;
  */
 
 int main(int argc, char *argv[])
 {
-	int count;
-	int str_to_int;
+	int i;
+	unsigned int k;
 	int sum = 0;
+	char *e;
 
-	count = 1;
-	while (count < argc)
+	if (argc > 1)
 	{
-		if (check_num(argv[count]))
+		for (i = 1; i < argc; i++)
 		{
-			str_to_int = atoi(argv[count]);
-			sum += str_to_int;
-		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		count++;
-	}
-	printf("%d\n", sum);
+			e = argv[i];
 
+			for (k = 0; k < strlen(e); k++)
+			{
+				if (e[k] < 48 || e[k] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(e);
+			e++;
+		}
+		printf("%d\n", sum);
+	}
+	else
+	{
+		printf("0\n");
+	}
 	return (0);
 }

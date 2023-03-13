@@ -10,7 +10,7 @@
 
 char *_strdup(char *str)
 {
-	char *aaa;
+	char *s;
 	int i, r = 0;
 
 	if (str == NULL)
@@ -18,10 +18,10 @@ char *_strdup(char *str)
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	aaa = malloc(sizeof(char) * (i + 1));
-	if (aaa == NULL)
+	s = malloc(sizeof(char) * (i + 1));
+	if (s == NULL)
 		return (NULL);
 	for (r = 0; str[r]; r++)
-		aaa[r] = str[r];
-	return (aaa);
+		s[r] = str[r];
+	return (s);
 }
